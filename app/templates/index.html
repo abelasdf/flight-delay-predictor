@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Flugverspätung Vorhersage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .form-section {
+            width: 45%;
+        }
+        .flights-section {
+            width: 45%;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-section">
+        <h1>✈️ Flugverspätung Vorhersagen</h1>
+
+        <form method="POST">
+            <label>Ankunftszeit:</label>
+            <input type="number" name="hour" min="0" max="23" required style="width: 60px;"> :
+            <input type="number" name="minute" min="0" max="59" required style="width: 60px;"><br><br>
+
+            <label>Flugnummer:</label>
+            <input type="text" name="flight_number" required><br><br>
+
+            <button type="submit">Vorhersagen</button>
+        </form>
+
+        {% if prediction is not none %}
+            {% if prediction is string %}
+                <h2>⚠️ Fehler: {{ prediction }}</h2>
+            {% else %}
+                <h2>🕒 Vorhergesagte Verspätung: {{ prediction|round(2) }} Minuten</h2>
+                <p>⏰ <strong>Ankunftszeit:</strong> {{ "%02d"|format(hour) }}:{{ "%02d"|format(minute) }} Uhr</p>
+                <p>🧾 <strong>Flugnummer:</strong> {{ flight_number }}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="flights-section">
+        <h2>🛬 Zukünftige Flüge</h2>
+        {% if flights %}
+            <ul>
+                {% for flight in flights %}
+                    <li><strong>{{ " ".join(flight.flight.split()[:2]) }}</strong> aus {{ flight.from }} (Geplant: {{ flight.scheduled }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Keine Daten verfügbar.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

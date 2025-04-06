@@ -1,0 +1,41 @@
+flight,from,scheduled,actual,status,airline,baggage
+Flugnummer,Ankommend aus,Geplant,Ankunft,Status,Airline,Gepäckausgabe
+"FI 568
+EK 3382",Reykjavík,13:05,1,,,
+"EK 087
+QF 8087",Dubai DXB,13:20,2,Gelandet,,"27
+ausgeliefert"
+KL 1921,Amsterdam,13:45,2,Gelandet,,"32
+in 9 min"
+"JU 332
+FB 1895",Belgrad,13:50,2,,,23
+"WK 187
+LX 8187",Antalya,13:50,2,,,
+SK 841,Oslo,13:55,2,Gelandet,,"26
+in 18 min"
+IB 629,Madrid,14:00,2,,,25
+"TK 1913
+GF 6041
+OM 1017
+PK 5913",Istanbul IST,14:05,2,,,
+"LH 1190
+AC 9028
+LX 3605",Frankfurt FRA,14:05,1,Verspätet,,
+EJU 7289,Palma De Mallorca,14:10,1,Verspätet,,
+"OS 569
+LX 3571
+TP 8735",Wien,14:20,1,Verspätet,,
+"QR 095
+FB 1928
+MH 9229
+UL 3495
+VA 6091
+WB 1007
+WY 6243",Doha,14:20,2,,,29
+RJ 153,Amman,14:30,2,,,21
+LX 2159,Palma De Mallorca,14:40,1,,,
+"LX 1853
+TP 8467",Thessaloniki,14:45,1,,,
+"LX 319
+AC 6830
+UA 9757",London LHR,14:50,2,,,
